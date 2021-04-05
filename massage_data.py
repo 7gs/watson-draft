@@ -67,4 +67,7 @@ vab_multiplier = spend_above_baseline / total_vab
 for index, row in df.iterrows():
     df.at[index, 'price'] = int(row['vab'] * vab_multiplier)
 
+# Create status column
+df['status'] = "Undrafted"
+
 df.to_csv('data_modified.csv')
